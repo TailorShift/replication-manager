@@ -1,8 +1,11 @@
-# inventory-manager
+# replication-manager
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Reads replication messages from Debezium and executes them in Postgres.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+This application is configured for replication in any direction (Datacenter -> Backoffice or Backoffice -> Datacenter).
+It should be deployed in both clusters.
+
+
 
 ## Running the application in dev mode
 
