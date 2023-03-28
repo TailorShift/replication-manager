@@ -17,7 +17,7 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() throws ExecutionException, InterruptedException, TimeoutException {
-        streamProducer.sendReceiptEvent(new ReceiptEvent(999L));
+        streamProducer.sendReceiptEvent();
         return "Hello from RESTEasy Reactive";
     }
 }
