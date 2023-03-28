@@ -124,9 +124,12 @@ public class StreamConsumer {
                     String json = o.payload().after().payload();
                     ReceiptEntity receiptEntity = objectMapper.readValue(json, ReceiptEntity.class);
 
-                    EmployeeEntity.persist(receiptEntity);
+                    ReceiptEntity.persist(receiptEntity);
 
                     for (var position : receiptEntity.positions) {
+                        position.receipt = receiptEntity;
+                        ReceiptPositionEntity.persist(position);
+
                         var movement = new InventoryMovementEntity();
                         movement.id = position.id;
                         movement.shopId = receiptEntity.shopId;

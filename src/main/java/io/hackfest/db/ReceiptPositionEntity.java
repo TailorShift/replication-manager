@@ -22,7 +22,6 @@ public class ReceiptPositionEntity extends PanacheEntityBase {
 
     public Long position;
 
-    //    @JsonProperty("product_id")
     public Long productId;
 
     @Enumerated(EnumType.STRING)
@@ -36,9 +35,7 @@ public class ReceiptPositionEntity extends PanacheEntityBase {
 
     public Integer discount;
 
-    //    @JsonProperty("discount_reason")
     public String discountReason;
 
-    //    @JsonProperty("tax_rate")
     public Double taxRate;
 }
