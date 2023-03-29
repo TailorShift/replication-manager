@@ -24,6 +24,7 @@ public class StreamConsumer {
     @Incoming("shops")
     @Transactional
     public void processShopChanges(String event) {
+        logger.info("Processing incoming shop change");
         try {
             var o = objectMapper.readValue(event, new TypeReference<DebeziumMessage<ShopEntity>>() {
             });
@@ -42,6 +43,7 @@ public class StreamConsumer {
     @Incoming("pos_devices")
     @Transactional
     public void processPosDeviceChanges(String event) {
+        logger.info("Processing incoming pos device change");
         try {
             var o = objectMapper.readValue(event, new TypeReference<DebeziumMessage<PosDeviceEntity>>() {
             });
@@ -60,6 +62,7 @@ public class StreamConsumer {
     @Incoming("products")
     @Transactional
     public void processProductChanges(String event) {
+        logger.info("Processing incoming product change");
         try {
             var o = objectMapper.readValue(event, new TypeReference<DebeziumMessage<ProductEntity>>() {
             });
@@ -78,6 +81,7 @@ public class StreamConsumer {
     @Incoming("customers")
     @Transactional
     public void processCustomersChanges(String event) {
+        logger.info("Processing incoming customer change");
         try {
             var o = objectMapper.readValue(event, new TypeReference<DebeziumMessage<CustomerEntity>>() {
             });
@@ -96,6 +100,7 @@ public class StreamConsumer {
     @Incoming("employees")
     @Transactional
     public void processEmployeeChanges(String event) {
+        logger.info("Processing incoming employee change");
         try {
             var o = objectMapper.readValue(event, new TypeReference<DebeziumMessage<EmployeeEntity>>() {
             });
@@ -114,6 +119,7 @@ public class StreamConsumer {
     @Incoming("receiptexports")
     @Transactional
     public void processReceiptExport(String event) {
+        logger.info("Processing incoming receipt export");
         try {
             var o = objectMapper.readValue(event, new TypeReference<DebeziumMessage<ReceiptEvent>>() {
             });
